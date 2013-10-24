@@ -9,5 +9,8 @@ module.exports = class ReactCompiler
     null
 
   compile: (params, callback) ->
-    source= transform params.data
+    try
+      source= transform params.data
+    catch err
+      return callback err.toString()
     callback null, data:source
