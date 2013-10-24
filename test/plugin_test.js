@@ -37,4 +37,33 @@ describe('Plugin', function() {
     });
   });
 
+  it('should compile and include JSX header comment if configured to', function(done) {
+    var content = 'var div = <div></div>;';
+    var expected1 = 'var div = <div></div>;';
+    var expected2 = '/** @jsx React.DOM */\nvar div = React.DOM.div(null);';
+
+    plugin.compile({data: content, path: 'file.jsx'}, function(error, result) {
+      var data = result.data;
+      expect(error).not.to.be.ok;
+      expect(data).to.equal(expected1);
+      // done();
+    });
+
+    plugin2= new Plugin({
+      plugins: {
+        react: {
+          autoIncludeCommentBlock: true
+        }
+      }
+    });
+
+    plugin2.compile({data: content, path: 'file.jsx'}, function(error, result) {
+      var data = result.data;
+      expect(error).not.to.be.ok;
+      expect(data).to.equal(expected2);
+      done();
+    });
+
+  });
+
 });

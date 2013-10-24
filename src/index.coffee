@@ -6,11 +6,14 @@ module.exports = class ReactCompiler
   extension: 'jsx'
 
   constructor: (@config) ->
-    null
+    @includeHeader= @config?.plugins?.react?.autoIncludeCommentBlock is yes
 
   compile: (params, callback) ->
+    source= params.data
+    if @includeHeader
+      source= "/** @jsx React.DOM */\n#{ source }"
     try
-      source= transform params.data
+      output= transform source
     catch err
       return callback err.toString()
-    callback null, data:source
+    callback null, data:output

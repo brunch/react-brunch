@@ -2,6 +2,27 @@
 Adds [React](http://facebook.github.io/react) support to [brunch](http://brunch.io)
 by automatically compiling `*.jsx` files.
 
+You can configure react-brunch to automatically insert a react header 
+(`/** @jsx React.DOM */`) into all `*.jsx` files. Disabled by default. 
+
+Example `config.coffee`:
+
+```coffeescript
+exports.config =
+  plugins:
+    react:
+      autoIncludeCommentBlock: yes
+  
+  # Usual brunch config stuf...
+  files:
+    javascripts:
+      joinTo: 'app.js'
+    stylesheets:
+      joinTo: 'app.css'
+    templates:
+      joinTo: 'app.js'
+```
+
 ## Usage
 Install the plugin via npm with `npm install --save react-brunch`.
 
