@@ -1,5 +1,6 @@
 ## react-brunch
-Adds [React](http://facebook.github.io/react) support to [brunch](http://brunch.io).
+Adds [React](http://facebook.github.io/react) support to [brunch](http://brunch.io)
+by automatically compiling `*.jsx` files.
 
 ## Usage
 Install the plugin via npm with `npm install --save react-brunch`.
