@@ -2,6 +2,8 @@
 Adds [React](http://facebook.github.io/react) support to [brunch](http://brunch.io)
 by automatically compiling `*.jsx` files.
 
+### Optional
+
 You can configure react-brunch to automatically insert a react header 
 (`/** @jsx React.DOM */`) into all `*.jsx` files. Disabled by default. 
 
@@ -22,6 +24,15 @@ exports.config =
     templates:
       joinTo: 'app.js'
 ```
+
+### Notes
+
+react-brunch only supports compiling `*.jsx` files. It doesn't peek at `*.js` to
+see if they have the React-ify comment header. I doubt it ever will. Here's why:
+
+Any `.js` file should be browser loadable. Embedding JSX will break in any JS
+environment. Therefore, I chose to have react-brunch only pre-processes `.jsx`
+files.
 
 ## Usage
 Install the plugin via npm with `npm install --save react-brunch`.
