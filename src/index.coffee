@@ -4,6 +4,7 @@ module.exports = class ReactCompiler
   brunchPlugin: yes
   type: 'javascript'
   extension: 'jsx'
+  pattern: /\.jsx/
 
   constructor: (@config) ->
     @includeHeader= @config?.plugins?.react?.autoIncludeCommentBlock is yes
