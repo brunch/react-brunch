@@ -1,3 +1,7 @@
+# react-brunch 1.0.4 (16 January 2014)
+* Added /.jsx/ pattern to plugin for matching files with .jsx anywhere in the filename
+* Updated to use react-tools ~0.8.0
+
 # react-brunch 1.0.3 (24 October 2013)
 * Added optional support for automatically adding /** @jsx React.DOM */ to top of *.jsx files
 
