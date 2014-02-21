@@ -1,3 +1,7 @@
+# react-brunch 1.0.5 (21 February 2014)
+* Updated to use react-tools ~0.9.0
+* Added `harmony` config option
+
 # react-brunch 1.0.4 (16 January 2014)
 * Added /.jsx/ pattern to plugin for matching files with .jsx anywhere in the filename
 * Updated to use react-tools ~0.8.0

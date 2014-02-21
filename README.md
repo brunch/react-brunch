@@ -14,6 +14,7 @@ exports.config =
   plugins:
     react:
       autoIncludeCommentBlock: yes
+      harmony: yes # include some es6 transforms
   
   # Usual brunch config stuf...
   files:
