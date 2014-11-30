@@ -4,18 +4,14 @@ by automatically compiling `*.jsx` files.
 
 ### Optional
 
-You can configure react-brunch to automatically insert a react header 
-(`/** @jsx React.DOM */`) into all `*.jsx` files. Disabled by default. 
-
 Example `config.coffee`:
 
 ```coffeescript
 exports.config =
   plugins:
     react:
-      autoIncludeCommentBlock: yes
       harmony: yes # include some es6 transforms
-  
+
   # Usual brunch config stuf...
   files:
     javascripts:
