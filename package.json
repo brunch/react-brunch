@@ -22,8 +22,7 @@
     "test": "node_modules/.bin/mocha --require test/common.js"
   },
   "dependencies": {
-    "react-tools": "0.12.1",
-    "jstransform": "^10.1.0"
+    "react-tools": "0.12.1"
   },
   "devDependencies": {
     "mocha": "1.11.0",
