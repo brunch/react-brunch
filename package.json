@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "react-tools": "0.12.1",
-    "jstransform": "^8.2.0"
+    "jstransform": "^10.1.0"
   },
   "devDependencies": {
     "mocha": "1.11.0",

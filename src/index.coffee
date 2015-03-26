@@ -1,5 +1,4 @@
-visitors= require('react-tools/vendor/fbtransform/visitors')
-transform= require('jstransform').transform
+react = require('react-tools/main')
 
 module.exports = class ReactCompiler
   brunchPlugin: yes
@@ -9,18 +8,16 @@ module.exports = class ReactCompiler
 
   constructor: (@config) ->
     @harmony= @config?.plugins?.react?.harmony is yes
+    @options = @config?.plugins?.react || {}
 
   compile: (params, callback) ->
     source= params.data
-    visitorList= if @harmony
-        visitors.getAllVisitors()
-      else
-        visitors.transformVisitors.react
-    try
-      output= transform(visitorList, source).code
 
+    try
+      output = react.transformWithDetails(source, @options)
     catch err
       console.log "ERROR", err
+      console.dir(output)
       return callback err.toString()
 
-    callback null, data:output
+    callback null, data: output.code
