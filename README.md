@@ -10,8 +10,10 @@ Example `config.coffee`:
 exports.config =
   plugins:
     react:
-      harmony: yes # include some es6 transforms
-
+      # options passed through to `react-tools.main.transformWithDetails()`
+      harmony: yes    # include some es6 transforms
+      sourceMap: no   # generate inline source maps
+      stripTypes: no  # strip type annotations
   # Usual brunch config stuf...
   files:
     javascripts:
@@ -30,6 +32,7 @@ see if they have the React-ify comment header. I doubt it ever will. Here's why:
 Any `.js` file should be browser loadable. Embedding JSX will break in any JS
 environment. Therefore, I chose to have react-brunch only pre-processes `.jsx`
 files.
+
 
 ## Usage
 Install the plugin via npm with `npm install --save react-brunch`.
