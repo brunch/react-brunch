@@ -1,5 +1,5 @@
-# react-brunch 1.0.5 (24 March 2014)
-* Updated to use react-tools >=0.9.0
+# react-brunch 1.0.8 (24 March 2014)
+* Updated to use react-tools 0.12.1
 
 # react-brunch 1.0.5 (21 February 2014)
 * Updated to use react-tools ~0.9.0
