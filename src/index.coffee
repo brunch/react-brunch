@@ -1,4 +1,6 @@
-react = require('react-tools/main')
+react = require 'react-tools/main'
+babel = require 'babel-core'
+omit  = require 'lodash.omit'
 
 module.exports = class ReactCompiler
   brunchPlugin: yes
@@ -7,14 +9,25 @@ module.exports = class ReactCompiler
   pattern: /\.jsx/
 
   constructor: (@config) ->
-    @harmony= @config?.plugins?.react?.harmony is yes
-    @options = @config?.plugins?.react || {}
+    options = @config?.plugins?.react || {}
+    for key in Object.keys(options)
+      unless key in ['babel', 'transformOptions']
+        console.warn "Warning: react-brunch requires to set option keys in `transformOptions`. See: http://goo.gl/Whn9z6"
+        break
+
+    @babel = options.babel is yes
+    @options = options.transformOptions || options || {}
+    @options = omit(@options, 'babel') if @options.babel
 
   compile: (params, callback) ->
     source= params.data
 
     try
-      output = react.transformWithDetails(source, @options)
+      if @babel
+        output = babel.transform(source, @options)
+      else
+        output = react.transformWithDetails(source, @options)
+
     catch err
       console.log "ERROR", err
       console.dir(output)
