@@ -10,10 +10,14 @@ Example `config.coffee`:
 exports.config =
   plugins:
     react:
-      # options passed through to `react-tools.main.transformWithDetails()`
-      harmony: yes    # include some es6 transforms
-      sourceMap: no   # generate inline source maps
-      stripTypes: no  # strip type annotations
+      transformOptions:
+        # options passed through to `react-tools.main.transformWithDetails()`
+        harmony: yes    # include some es6 transforms
+        sourceMap: no   # generate inline source maps
+        stripTypes: no  # strip type annotations
+      # if you use babel to transform jsx, transformOptions would be passed though to `babel.transform()`
+      # See: http://babeljs.io/docs/usage/options/
+      babel: false
   # Usual brunch config stuf...
   files:
     javascripts:
