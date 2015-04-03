@@ -1,4 +1,7 @@
-# react-brunch 1.0.8 (24 March 2014)
+# react-brunch 1.0.9 (3 April 2015)
+* Added support for jsx/es6 compilation via babel
+
+# react-brunch 1.0.8 (24 March 2015)
 * Updated to use react-tools 0.12.1
 
 # react-brunch 1.0.5 (21 February 2014)
