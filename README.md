@@ -2,6 +2,8 @@
 Adds [React](http://facebook.github.io/react) support to [brunch](http://brunch.io)
 by automatically compiling `*.jsx` files.
 
+**DEPRECATED:** Please use [`babel-brunch`](https://github.com/babel/babel-brunch) instead.
+
 ### Optional
 
 Example `config.coffee`:
