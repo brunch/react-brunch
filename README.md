@@ -41,7 +41,7 @@ files.
 
 
 ## Usage
-Install the plugin via npm with `npm install --save react-brunch`.
+Install the plugin via npm with `npm install --save-dev react-brunch`.
 
 Or, do manual install:
 
