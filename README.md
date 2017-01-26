@@ -1,10 +1,13 @@
-## react-brunch
+> ## 🚧 This Plugin Is Deprecated 🚧
+
+> This plugin is deprecated in favor of [`babel-brunch`](https://github.com/babel/babel-brunch).
+
+# react-brunch
+
 Adds [React](http://facebook.github.io/react) support to [brunch](http://brunch.io)
 by automatically compiling `*.jsx` files.
 
-**DEPRECATED:** Please use [`babel-brunch`](https://github.com/babel/babel-brunch) instead.
-
-### Optional
+## Optional
 
 Example `config.coffee`:
 
@@ -30,7 +33,7 @@ exports.config =
       joinTo: 'app.js'
 ```
 
-### Notes
+## Notes
 
 react-brunch only supports compiling `*.jsx` files. It doesn't peek at `*.js` to
 see if they have the React-ify comment header. I doubt it ever will. Here's why:
@@ -59,7 +62,7 @@ project and adjusted to compile React (.jsx) files.
 
 The MIT License (MIT)
 
-Copyright (c) 2013 Matt McCray
+Copyright (c) 2017 Matt McCray
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
